@@ -1,3 +1,3 @@
 export function test() {
-    console.log('ok2');
+    console.log(document.URL);
 }
