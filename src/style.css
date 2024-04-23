@@ -1,4 +1,81 @@
-.hello {
+.hello, .update {
+    display: flex;
+    flex-direction: column;
+}
+
+.update {
+    align-items: center;
+}
+
+button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #76a5af;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45818e;
+    /* цвет фона кнопки при наведении */
+}
+
+.user-name {
+    border: 1px solid #45818e;
+    color: #45818e;
+    padding: 5px 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #45818e;
+}
+
+.error-message {
     color: red;
-    background: url('./icon.png');
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.loader {
+    margin-top: 10px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #45818e;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

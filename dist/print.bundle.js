@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkbtlz_sidebar=self.webpackChunkbtlz_sidebar||[]).push([[568],{415:(e,s,l)=>{function t(){console.log("I get called from print.js!")}l.d(s,{A:()=>t})}},e=>{e(e.s=415)}]);
-//# sourceMappingURL=print.bundle.js.map

@@ -1,1 +1,0 @@
-{"version":3,"file":"print.bundle.js","mappings":"0GAAe,SAASA,IACpBC,QAAQC,IAAI,8BAChB,C","sources":["webpack://btlz-sidebar/./src/print.js"],"sourcesContent":["export default function printMe() {\r\n    console.log('I get called from print.js!');\r\n}"],"names":["printMe","console","log"],"sourceRoot":""}
