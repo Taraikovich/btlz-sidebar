@@ -34,10 +34,13 @@ function GetData() {
         return data.map(item => [
             item.id,
             item.for_date,
+            item.card.due_date || '',
+            item.card.completed_at || '',
             item.card.board.spaces[0].title,
             item.role.name,
             item.card.title,
             item.comment,
+            item.card.completed_at ? 1.2 : 1,
             item.time_spent
         ]);
     }
@@ -48,11 +51,14 @@ function GetData() {
             .map(item => [
                 item[0],
                 format(item[1], 'yyyy-MM-dd'),
-                item[2],
-                item[3],
+                item[2] ? format(item[2], 'yyyy-MM-dd') : '',
+                Item[3] ? format(item[3], 'yyyy-MM-dd') : '',
                 item[4],
                 item[5],
-                item[6]
+                item[6],
+                item[7],
+                item[8],
+                item[9],
             ]);
     }
 
@@ -83,19 +89,6 @@ function GetData() {
         });
     }
 
-    async function getData() {
-        return new Promise((resolve, reject) => {
-            google.script.run
-                .withSuccessHandler((res) => {
-                    resolve(res);
-                })
-                .withFailureHandler((err) => {
-                    reject(err);
-                })
-                .getTableData();
-        });
-    }
-
     function date() {
         const currentDate = new Date();
         const from = subMonths(currentDate, 2);
@@ -108,7 +101,6 @@ function GetData() {
             developer: localStorage.getItem('user_id')
         };
     }
-
 
     return (
         <div className="update">
