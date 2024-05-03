@@ -31,18 +31,24 @@ function GetData() {
     }
 
     function formatData(data) {
-        return data.map(item => [
-            item.id,
-            item.for_date,
-            item.card.due_date || '',
-            item.card.completed_at || '',
-            item.card.board.spaces[0].title,
-            item.role.name,
-            item.card.title,
-            item.comment,
-            item.card.completed_at ? 1.2 : 1,
-            item.time_spent
-        ]);
+
+        return data.map(item => {
+            const dueDate = item.card.due_date;
+            const completedAt = item.card.completed_at;
+
+            return [
+                item.id,
+                item.for_date ? format(item.for_date, 'yyyy-MM-dd') : '',
+                dueDate ? format(dueDate, 'yyyy-MM-dd') : '',
+                completedAt ? format(completedAt, 'yyyy-MM-dd') : '',
+                item.card.board.spaces[0].title,
+                item.role.name,
+                item.card.title,
+                item.comment,
+                item.card.completed_at ? 1.2 : 1,
+                item.time_spent
+            ]
+        });
     }
 
     function filterData(data, fromDate) {
