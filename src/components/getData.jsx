@@ -45,7 +45,7 @@ function GetData() {
                 item.role.name,
                 item.card.title,
                 item.comment,
-                item.card.completed_at ? 1.2 : 1,
+                item.card.completed_on_time ? 1.2 : 1,
                 item.time_spent
             ]
         });
