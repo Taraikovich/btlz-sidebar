@@ -58,7 +58,7 @@ function GetData() {
                 item[0],
                 format(item[1], 'yyyy-MM-dd'),
                 item[2] ? format(item[2], 'yyyy-MM-dd') : '',
-                Item[3] ? format(item[3], 'yyyy-MM-dd') : '',
+                item[3] ? format(item[3], 'yyyy-MM-dd') : '',
                 item[4],
                 item[5],
                 item[6],
